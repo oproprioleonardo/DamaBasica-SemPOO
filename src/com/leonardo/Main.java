@@ -31,11 +31,15 @@ public class Main {
         }
     }
 
+    // representação gráfica:
+    // cada setor é composto por 3 █ de altura e 6 █ de largura
+    // o tabuleiro é 8x8 (8 setores de altura e 8 setores de largura)
     public static void imprimirNovoTabuleiro() {
         System.out.println("\n            1     2     3     4     5     6     7    8");
         for (int linha = 0; linha < 8; linha++) {
             System.out.print("         ");
             boolean white = linha % 2 == 0;
+            // este for trabalha a parte de cima do setor
             for (int coluna = 0; coluna < 8; coluna++) {
                 String backgroundColor = (white ? ANSI_WHITE : ANSI_YELLOW) + "██████" + ANSI_RESET;
                 System.out.print(backgroundColor);
@@ -44,6 +48,7 @@ public class Main {
             System.out.println();
             System.out.print("       " + (linha + 1) + " ");
             white = linha % 2 == 0;
+            // este for trabalha a parte do meio do setor, onde fica a dama
             for (int coluna = 0; coluna < 8; coluna++) {
                 String backgroundColor = (white ? ANSI_WHITE : ANSI_YELLOW);
                 try {
@@ -65,6 +70,7 @@ public class Main {
             System.out.println();
             System.out.print("         ");
             white = linha % 2 == 0;
+            // este for trabalha a parte de baixo do setor
             for (int coluna = 0; coluna < 8; coluna++) {
                 String backgroundColor = (white ? ANSI_WHITE : ANSI_YELLOW) + "██████" + ANSI_RESET;
                 System.out.print(backgroundColor);
